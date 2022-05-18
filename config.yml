@@ -38,7 +38,7 @@ params:
     env: production
     description: "typing.."
     author: Zihan
-
+    comments: true
     defaultTheme: auto
     ShowShareButtons: false
     ShowReadingTime: true
