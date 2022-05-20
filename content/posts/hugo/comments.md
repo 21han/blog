@@ -39,4 +39,4 @@ It takes no time to add [utterances](https://github.com/utterance/utterances) to
     ```
 5. Add this to the `layouts/partials/comments.html` file. 
 6. Turn on the` comments` parameter in your `config.yml` file.
-7. Verify everything works locally, and deploys to the remote.
+7. Verify everything works locally, and deploys your changes.
