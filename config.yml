@@ -27,6 +27,8 @@ languages:
                   url: tags/
                 - name: Archive
                   url: archives/
+                - name: 💡
+                  url: thoughts/
 
 outputs:
     home:
