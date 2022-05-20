@@ -39,7 +39,7 @@ params:
     description: "typing.."
     author: Zihan
     comments: true
-    defaultTheme: auto
+    defaultTheme: dark
     ShowShareButtons: false
     ShowReadingTime: true
     displayFullLangName: true

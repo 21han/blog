@@ -16,7 +16,7 @@ changes to the theme.
 
 ## Start Server
 
-```bash
+```
 # the --navigateToChanged has been particularly useful to quickly see changes
 hugo server --navigateToChanged -D
 ```
