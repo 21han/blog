@@ -1,8 +1,9 @@
 ---
-title: "comments?"
-date: 2022-05-13T22:42:28-04:00
+title: "Hugo 3 - comments?"
+date: 2022-05-17
 draft: false
-tags: ['hugo']
+weight: 102
+tags: ['hugo', 'widget', 'utterances']
 TocOpen: true
 ShowPostNavLinks: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Hi there! 👋"
-url: "/en/about"
+url: "/en/bio"
 ShowToc: false
 comments: false
 ---
@@ -15,3 +15,6 @@ Outside of work, I enjoy riding my bike, exploring New York’s restaurants, pla
 On snowy days, I am usually found skiing in Vermont or Colorado.
 When I feel exhausted, I love to meditate. My favorite meditation retreat centers are [Bhavana Society](https://bhavanasociety.org/) and [Dharma Drum](https://dharmadrumretreat.org/).
 
+--- 
+
+Check out my [Recent Posts]({{< ref "/posts" >}} "Posts")!

@@ -20,14 +20,14 @@ languages:
         weight: 1
         menu:
             main:
-                - name: About
-                  url: en/about/
+                - name: Bio
+                  url: en/bio/
                 - name: Search
                   url: search/
                 - name: Tags
                   url: tags/
-                - name: Archive
-                  url: archives/
+                - name: Recent
+                  url: posts/
                 - name: 💡
                   url: thoughts/
 
@@ -61,10 +61,10 @@ params:
         imageWidth: 130 # custom size
         imageHeight: 130 # custom size
         buttons:
-            - name: About
-              url: en/about/
+            - name: Bio
+              url: en/bio/
             - name: Latest
-              url: archives
+              url: posts
 
     socialIcons:
         - name: github
