@@ -2,6 +2,7 @@
 title: "Hi there! 👋"
 url: "/en/about"
 ShowToc: false
+comments: false
 ---
 
 
