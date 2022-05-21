@@ -1,8 +1,9 @@
 ---
-title: "Deploy to AWS"
-date: 2022-05-14T22:42:28-04:00
+title: "Hugo 2 - Deploy to AWS"
+date: 2022-05-16
 draft: false
-tags: ['hugo']
+weight: 101
+tags: ['hugo', 'AWS', 'Amplify']
 TocOpen: true
 ShowPostNavLinks: true
 ---

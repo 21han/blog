@@ -1,7 +1,8 @@
 ---
-title: "Hugo and Google Analytics Integration"
-date: 2022-05-12T22:42:28-04:00
+title: "Hugo 4 - Google Analytics Integration"
+date: 2022-05-18
 draft: false
+weight: 103
 tags: ['hugo', 'google analytics']
 TocOpen: true
 ShowPostNavLinks: true
