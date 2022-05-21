@@ -10,6 +10,7 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 
+googleAnalytics: G-Y2DFVYGMPG
 minify:
     disableXML: true
 

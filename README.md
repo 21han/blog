@@ -1,10 +1,16 @@
 <h1 align=center>Zihan's Personal Blog | <a href="https://www.guozihan.link/" rel="nofollow">Demo</a></h1>
 
 <h4 align=center>☄️ Hugo | 🌙 Papermod Theme | 📱 Technical Blog</h4>
+
 <br>
 
 ![Size](https://github-size-badge.herokuapp.com/21han/blog.svg)
 [![hugo-papermod](https://img.shields.io/badge/Hugo--Themes-@PaperMod-blue)](https://themes.gohugo.io/themes/hugo-papermod/)
+
+## 🚀🚀🚀
+
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://us-east-1.console.aws.amazon.com/amplify/home?region=us-east-1#/d1i779b6k8afpv)
+
 
 ## Installation
 
