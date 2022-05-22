@@ -65,12 +65,16 @@ params:
               url: en/bio/
             - name: Latest
               url: posts
+            - name: Feedback
+              url: thoughts
 
     socialIcons:
         - name: github
           url: "https://github.com/21han"
         - name: linkedin
           url: "https://www.linkedin.com/in/zihan-guo/"
+        - name: RSS
+          url: "https://tinyletter.com/21han"
 
     fuseOpts:
         isCaseSensitive: false
