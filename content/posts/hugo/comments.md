@@ -3,7 +3,7 @@ title: "Hugo 3 - comments?"
 date: 2022-05-17
 draft: false
 weight: 102
-tags: ['hugo', 'widget', 'utterances']
+tags: ['hugo']
 TocOpen: true
 ShowPostNavLinks: true
 ---
