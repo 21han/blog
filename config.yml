@@ -20,22 +20,22 @@ languages:
         weight: 1
         menu:
             main:
-                - name: Bio
+                - name: 👋
                   url: en/bio/
                   weight: 1
-                - name: Search
+                - name: 🔍
                   url: search/
                   weight: 4
-                - name: Tags
+                - name: 🏷️
                   url: tags/
                   weight: 3
-                - name: Recent
+                - name: 📚
                   url: posts/
                   weight: 2
                 - name: 💡
                   url: thoughts/
                   weight: 5
-                - name: Subscribe
+                - name: 🗞️
                   url: https://tinyletter.com/21han
                   weight: 6
 
