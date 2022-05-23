@@ -2,7 +2,7 @@ baseURL: "https://www.guozihan.link"
 title: Root
 paginate: 5
 theme: PaperMod
-
+languageCode: "en-us"
 enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
