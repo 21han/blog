@@ -3,7 +3,7 @@ title: "Everything Hugo"
 date: 2022-05-21
 weight: 1
 draft: false
-tags: ['hugo', 'category']
+tags: ['hugo']
 showToc: false
 ---
 

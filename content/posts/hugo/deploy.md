@@ -3,7 +3,7 @@ title: "Hugo 2 - Deploy to AWS"
 date: 2022-05-16
 draft: false
 weight: 101
-tags: ['hugo', 'AWS', 'Amplify']
+tags: ['hugo']
 TocOpen: true
 ShowPostNavLinks: true
 ---

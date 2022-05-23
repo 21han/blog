@@ -22,14 +22,22 @@ languages:
             main:
                 - name: Bio
                   url: en/bio/
+                  weight: 1
                 - name: Search
                   url: search/
+                  weight: 4
                 - name: Tags
                   url: tags/
+                  weight: 3
                 - name: Recent
                   url: posts/
+                  weight: 2
                 - name: 💡
                   url: thoughts/
+                  weight: 5
+                - name: Subscribe
+                  url: https://tinyletter.com/21han
+                  weight: 6
 
 outputs:
     home:
@@ -51,6 +59,9 @@ params:
     ShowCodeCopyButtons: true
     ShowToc: true
     images: ["papermod-cover.png"]
+
+    assets:
+      disableHLJS: true
 
     profileMode:
         enabled: true

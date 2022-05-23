@@ -3,7 +3,7 @@ title: "Hugo 4 - Google Analytics Integration"
 date: 2022-05-18
 draft: false
 weight: 103
-tags: ['hugo', 'google analytics']
+tags: ['hugo']
 TocOpen: true
 ShowPostNavLinks: true
 ---
