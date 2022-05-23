@@ -60,6 +60,9 @@ params:
     ShowToc: true
     images: ["papermod-cover.png"]
 
+    assets:
+      disableHLJS: true
+
     profileMode:
         enabled: true
         title: "Zihan Guo" # optional default will be site title
