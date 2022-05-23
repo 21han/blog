@@ -6,6 +6,7 @@
 
 ![Size](https://github-size-badge.herokuapp.com/21han/blog.svg)
 [![hugo-papermod](https://img.shields.io/badge/Hugo--Themes-@PaperMod-blue)](https://themes.gohugo.io/themes/hugo-papermod/)
+![](https://img.shields.io/github/issues/21han/blog)
 
 ## 🚀🚀🚀
 

@@ -101,6 +101,3 @@ taxonomies:
     series: series
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
