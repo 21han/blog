@@ -102,10 +102,4 @@ taxonomies:
 
 markup:
   highlight:
-    anchorLineNos: false
-    codeFences: true
-    guessSyntax: false
-    lineNos: true
     lineNumbersInTable: true
-    noClasses: true
-    style: native
