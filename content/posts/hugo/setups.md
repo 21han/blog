@@ -29,7 +29,7 @@ hugo server --navigateToChanged -D
 
 ## Folder Structure
 
-```text
+```
 ❯ tree -d ./    
 ./
 ├── content
@@ -47,19 +47,19 @@ hugo server --navigateToChanged -D
 ## Write a new post
 
 To test creating a new post, try below:
-```bash
+```
 hugo new posts/<optional-folder-name>/<post-name>.md
 ```
 
 Generally, use the following **Hugo** command:
 
-```bash
+```
 hugo new [path] [flags]
 ```
 
 ### Options
 
-```text
+```
   -b, --baseURL string         hostname (and path) to the root, e.g. https://spf13.com/
   -D, --buildDrafts            include content marked as draft
   -E, --buildExpired           include expired content
