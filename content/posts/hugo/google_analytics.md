@@ -35,7 +35,7 @@ Although differs by themes, in general. it is extremely easy to integrate your *
 
 1. Check under your `themes` folder if path `<theme-name>/layouts/partials/head.html` (or `<theme-name>/layouts/partials/head.htmls`) exists.
     - If it does, check if inside that `.html` file it contains the following code chunk 
-        ```html
+        ```
         {{- template "_internal/google_analytics.html" . }}
         ```
     - If it doesn't, create the following file under your root directory `layouts/partials/head.html`, and copy below
