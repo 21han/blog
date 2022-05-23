@@ -40,7 +40,7 @@ Although differs by themes, in general. it is extremely easy to integrate your *
         ```
     - If it doesn't, create the following file under your root directory `layouts/partials/head.html`, and copy below
     code over
-        ```html
+        ```
         <head>
             {{ template "_internal/google_analytics.html" . }}
             {{ template "_internal/google_analytics_async.html" . }}
@@ -48,7 +48,7 @@ Although differs by themes, in general. it is extremely easy to integrate your *
         ```
 
 2. If we pass both checks, simply add **googleAnalytics** field and value to your **config.yml** file.
-    ```yaml
+    ```
     buildFuture: false
     buildExpired: false
     enableEmoji: true
