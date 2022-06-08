@@ -1,6 +1,6 @@
 ---
 title: "Hi there! 👋"
-url: "/en/bio"
+url: "bio"
 ShowToc: false
 comments: false
 ---
