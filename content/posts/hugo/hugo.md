@@ -5,6 +5,8 @@ weight: 1
 draft: false
 tags: ['hugo']
 showToc: false
+cover:
+    image: "https://media.giphy.com/media/l0FecslWCvnper9YI/giphy.gif"
 ---
 
 > the world’s fastest framework for building websites. - Hugo

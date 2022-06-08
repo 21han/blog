@@ -10,7 +10,7 @@ ShowPostNavLinks: true
 
 ## Why comments?
 
-Just to add some interactive features.
+How else am I going to learn what features are good or bad?
 
 ## What's out there?
 

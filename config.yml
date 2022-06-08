@@ -1,7 +1,8 @@
 baseURL: "https://www.guozihan.link"
-title: Root
 paginate: 5
-theme: PaperMod
+theme:
+  - PaperMod
+title: 🌞
 languageCode: "en-us"
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -14,30 +15,57 @@ googleAnalytics: G-Y2DFVYGMPG
 minify:
     disableXML: true
 
+timeout: 60000
+defaultContentLanguage: en
 languages:
     en:
-        languageName: "English"
-        weight: 1
-        menu:
-            main:
-                - name: 👋
-                  url: en/bio/
-                  weight: 1
-                - name: 🔍
-                  url: search/
-                  weight: 4
-                - name: 🏷️
-                  url: tags/
-                  weight: 3
-                - name: 📚
-                  url: posts/
-                  weight: 2
-                - name: 💡
-                  url: thoughts/
-                  weight: 5
-                - name: 🗞️
-                  url: https://tinyletter.com/21han
-                  weight: 6
+      languageName: "English"
+      weight: 1
+      menu:
+        main:
+          - name: 👋
+            url: bio/
+            weight: 1
+          - name: 🔍
+            url: search/
+            weight: 4
+          - name: 🏷️
+            url: tags/
+            weight: 3
+          - name: 📚
+            url: posts/
+            weight: 2
+          - name: 💡
+            url: thoughts/
+            weight: 5
+          - name: 🗞️
+            url: https://tinyletter.com/21han
+            weight: 6
+    cn:
+      languageName: 中文
+      weight: 2
+      menu:
+        main:
+          - name: 👋
+            url: bio/
+            weight: 1
+          - name: 🔍
+            url: search/
+            weight: 4
+          - name: 🏷️
+            url: tags/
+            weight: 3
+          - name: 📚
+            url: posts/
+            weight: 2
+          - name: 💡
+            url: thoughts/
+            weight: 5
+          - name: 🗞️
+            url: https://tinyletter.com/21han
+            weight: 6
+
+
 
 outputs:
     home:
@@ -48,7 +76,7 @@ outputs:
 params:
     env: production
     description: "typing.."
-    author: Zihan
+    author: 🐻
     comments: true
     defaultTheme: dark
     ShowShareButtons: false
@@ -65,18 +93,18 @@ params:
 
     profileMode:
         enabled: true
-        title: "Zihan Guo" # optional default will be site title
-        subtitle: "Engineer @ [NYDIG](https://nydig.com/)"
+        title: "Z."
+        subtitle: ""
         imageUrl: "https://avatars.githubusercontent.com/u/22876277?v=4" # optional
         imageTitle: "<title of image as alt>" # optional
         imageWidth: 130 # custom size
         imageHeight: 130 # custom size
         buttons:
-            - name: Bio
-              url: en/bio/
-            - name: Latest
+            - name: 👋
+              url: bio
+            - name: 📚
               url: posts
-            - name: Feedback
+            - name: 💡
               url: thoughts
 
     socialIcons:

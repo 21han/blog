@@ -8,9 +8,6 @@ TocOpen: true
 ShowPostNavLinks: true
 ---
 
-## Why Google Analytics on your Hugo site?
-
-<iframe src="https://giphy.com/embed/JWuBH9rCO2uZuHBFpm" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Giflytics-JWuBH9rCO2uZuHBFpm"></a></p>
 
 ## How to add Google Analytics to your Hugo site?
 
