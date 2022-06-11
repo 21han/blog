@@ -1,4 +1,4 @@
-<h1 align=center>Zihan's Personal Blog | <a href="https://www.guozihan.link/" rel="nofollow">Demo</a></h1>
+<h1 align=center>Z.'s Personal Blog | <a href="https://www.guozihan.link/" rel="nofollow">Demo</a></h1>
 
 <h4 align=center>☄️ Hugo | 🌙 Papermod Theme | 📱 Technical Blog</h4>
 

@@ -13,120 +13,120 @@ enableEmoji: true
 
 googleAnalytics: G-Y2DFVYGMPG
 minify:
-    disableXML: true
+  disableXML: true
 
 timeout: 60000
 defaultContentLanguage: en
 languages:
-    en:
-      languageName: "English"
-      weight: 1
-      menu:
-        main:
-          - name: 👋
-            url: bio/
-            weight: 1
-          - name: 🔍
-            url: search/
-            weight: 4
-          - name: 🏷️
-            url: tags/
-            weight: 3
-          - name: 📚
-            url: posts/
-            weight: 2
-          - name: 💡
-            url: thoughts/
-            weight: 5
-          - name: 🗞️
-            url: https://tinyletter.com/21han
-            weight: 6
-    cn:
-      languageName: 中文
-      weight: 2
-      menu:
-        main:
-          - name: 👋
-            url: bio/
-            weight: 1
-          - name: 🔍
-            url: search/
-            weight: 4
-          - name: 🏷️
-            url: tags/
-            weight: 3
-          - name: 📚
-            url: posts/
-            weight: 2
-          - name: 💡
-            url: thoughts/
-            weight: 5
-          - name: 🗞️
-            url: https://tinyletter.com/21han
-            weight: 6
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: 👋
+          url: bio/
+          weight: 1
+        - name: 🔍
+          url: search/
+          weight: 4
+        - name: 🏷️
+          url: tags/
+          weight: 3
+        - name: 📚
+          url: posts/
+          weight: 2
+        - name: 💡
+          url: thoughts/
+          weight: 5
+        - name: 🗞️
+          url: https://tinyletter.com/21han
+          weight: 6
+  cn:
+    languageName: 中文
+    weight: 2
+    menu:
+      main:
+        - name: 👋
+          url: bio/
+          weight: 1
+        - name: 🔍
+          url: search/
+          weight: 4
+        - name: 🏷️
+          url: tags/
+          weight: 3
+        - name: 📚
+          url: posts/
+          weight: 2
+        - name: 💡
+          url: thoughts/
+          weight: 5
+        - name: 🗞️
+          url: https://tinyletter.com/21han
+          weight: 6
 
 
 
 outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 params:
-    env: production
-    description: "typing.."
-    author: 🐻
-    comments: true
-    defaultTheme: dark
-    ShowShareButtons: false
-    ShowReadingTime: true
-    displayFullLangName: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: true
-    ShowToc: true
-    images: ["papermod-cover.png"]
+  env: production
+  description: "typing.."
+  author: 🐻
+  comments: true
+  defaultTheme: dark
+  ShowShareButtons: false
+  ShowReadingTime: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  images: [ "papermod-cover.png" ]
 
-    assets:
-      disableHLJS: true
+  assets:
+    disableHLJS: true
 
-    profileMode:
-        enabled: true
-        title: "Z."
-        subtitle: ""
-        imageUrl: "https://avatars.githubusercontent.com/u/22876277?v=4" # optional
-        imageTitle: "<title of image as alt>" # optional
-        imageWidth: 130 # custom size
-        imageHeight: 130 # custom size
-        buttons:
-            - name: 👋
-              url: bio
-            - name: 📚
-              url: posts
-            - name: 💡
-              url: thoughts
+  profileMode:
+    enabled: true
+    title: "Z."
+    subtitle: ""
+    imageUrl: "https://avatars.githubusercontent.com/u/22876277?v=4" # optional
+    imageTitle: "<title of image as alt>" # optional
+    imageWidth: 130 # custom size
+    imageHeight: 130 # custom size
+    buttons:
+      - name: 👋
+        url: bio
+      - name: 📚
+        url: posts
+      - name: 💡
+        url: thoughts
 
-    socialIcons:
-        - name: github
-          url: "https://github.com/21han"
-        - name: linkedin
-          url: "https://www.linkedin.com/in/zihan-guo/"
-        - name: RSS
-          url: "https://tinyletter.com/21han"
+  socialIcons:
+    - name: github
+      url: "https://github.com/21han"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/zihan-guo/"
+    - name: RSS
+      url: "https://tinyletter.com/21han"
 
-    fuseOpts:
-        isCaseSensitive: false
-        shouldSort: true
-        location: 0
-        distance: 1000
-        threshold: 0.4
-        minMatchCharLength: 0
-        keys: ["title", "permalink", "summary", "content"]
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: [ "title", "permalink", "summary", "content" ]
 
 taxonomies:
-    tag: tags
-    series: series
+  tag: tags
+  series: series
 
 markup:
   highlight:

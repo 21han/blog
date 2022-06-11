@@ -10,91 +10,140 @@ ShowPostNavLinks: true
 
 ## Getting Started
 
-The
+To follow a DRY (Don't Repeat Yourself) principle, please refer to the
 [Official Doc](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/)
-is easy to follow. Make sure to not alter anything in `./themes` folder unless you are deliberately making
-changes to the theme submodule.
+for the most basic set-ups. Make sure to not alter anything in the `./themes` folder unless you are deliberately making
+changes to the theme submodule, which is recommended if you plan to propose a change to the selected theme.
 
-## Start Server
+## Understanding Hugo
 
-> `hugo server` will avoid writing the rendered and served content to disk, preferring to store it in memory.
-> 
-> By default hugo will also watch your files for any changes you make and automatically rebuild the site. It will then live reload any open browser pages and push the latest content to them. As most Hugo sites are built in a fraction of a second, you will be able to save and see your changes nearly instantly.
+When I first started using Hugo, one of the most convenient features is that Hugo automatically refreshes the page that you
+have just edited, making it easy to check your edit. Naturally, I was curious how Hugo achieved this feature, so I looked
+at its source code, and found the `livereload.go`'s code chunk below.
 
+
+```go
+// source: https://github.com/gohugoio/hugo/blob/master/livereload/livereload.go#L132-L141
+
+func refreshPathForPort(s string, port int) {
+	// Tell livereload a file has changed - will force a hard refresh if not CSS or an image
+	urlPath := filepath.ToSlash(s)
+	portStr := ""
+	if port > 0 {
+		portStr = fmt.Sprintf(`, "overrideURL": %d`, port)
+	}
+	msg := fmt.Sprintf(`{"command":"reload","path":%q,"originalPath":"","liveCSS":true,"liveImg":true%s}`, urlPath, portStr)
+	wsHub.broadcast <- []byte(msg)
+}
+```
+
+Basically, this is achieved using a local WebSocket connection from here. This is all based on the wonderful [Gorilla 
+Websocket Package](https://github.com/gorilla/websocket)
+
+```go
+// source: https://github.com/gohugoio/hugo/blob/master/livereload/connection.go
+
+type connection struct {
+	// The websocket connection.
+	ws *websocket.Conn
+
+	// Buffered channel of outbound messages.
+	send chan []byte
+
+	// There is a potential data race, especially visible with large files.
+	// This is protected by synchronisation of the send channel's close.
+	closer sync.Once
+}
+```
+
+### What makes Hugo so secure?
+
+
+#### Overview
+
+Just because Hugo is an SSG doesn't guarantee it is secure. There are numerous other SSGs out there, but Hugo differs from
+others because of its usage of **virtual file system** and **strict default security policy** to ensure runtime security.
+
+The most hardcore way to secure the runtime is to **sandbox** it. What this means is that Hugo uses [spf13/afero](https://github.com/spf13/afero)
+as its File System abstraction layer, and no third-party components can mount files outside the root.
+
+
+#### Security Policy
+```go
+source: https://github.com/gohugoio/hugo/blob/master/config/security/securityConfig.go
+
+// Config is the top level security config.
+type Config struct {
+	// Restricts access to os.Exec.
+	Exec Exec `json:"exec"`
+
+	// Restricts access to certain template funcs.
+	Funcs Funcs `json:"funcs"`
+
+	// Restricts access to resources.Get, getJSON, getCSV.
+	HTTP HTTP `json:"http"`
+
+	// Allow inline shortcodes
+	EnableInlineShortcodes bool `json:"enableInlineShortcodes"`
+}
+```
+
+For example, in the code chunk above, Hugo's built-in security policy is to restrict access to `os.Exec`, certain
+template functions that aren't completed trusted.
+
+
+#### Dependency Security
+
+Because all dependencies are managed by [Modules](https://github.com/golang/go/wiki/Modules). Hugo takes advantages
+of its `go.sum` which basically checks if your downloaded binary matches the expected cryptographic checksums of the 
+version. More readings on this can be found [here](https://github.com/golang/go/wiki/Modules)
+
+
+### Understanding content structure
 
 ```
-# the --navigateToChanged has been particularly useful to quickly see changes
-hugo server --navigateToChanged -D
-```
-
-## Folder Structure
-
-```
-❯ tree -d ./    
+❯ tree -d ./ 
 ./
-├── content
+├── content  # 🏠 this is where to place your markdown content
 │   └── posts
-│       └── hugo  # I created a folder for each topic that I want to write about
-├── layouts
-├── public
-├── resources
+│       ├── hugo  # I like to group my posts into folders to organize contents
+│       └── meditation
+├── layouts  # Hugo layouts either live here or inside the template
+│   └── partials  # I include any override/project-only layouts here to enhance what's not already in the template 
+├── public  # don't worry about this folder if you are using my deployment set-up
+├── resources  # where resources is stored
 │   └── _gen
 │       ├── assets
-│       └── images
-├── static
+├── static  # static files directory
+└── themes  # the theme you are using. e.g. here I am using the PaperMod theme. 
+    └── PaperMod
+        ├── assets
+        │   ├── css
+        │   │   ├── common
+        │   │   ├── core
+        │   │   ├── extended
+        │   │   └── hljs
+        │   └── js
+        ├── i18n
+        ├── images
+        └── layouts
+            ├── _default
+            │   └── _markup
+            ├── partials
+            │   └── templates
+            └── shortcodes
+
+29 directories
+
 ```
 
-## Write a new post
+## See Also
 
-To test creating a new post, try below:
-```
-hugo new posts/<optional-folder-name>/<post-name>.md
-```
-
-Generally, use the following **Hugo** command:
-
-```
-hugo new [path] [flags]
-```
-
-### Options
-
-```
-  -b, --baseURL string         hostname (and path) to the root, e.g. https://spf13.com/
-  -D, --buildDrafts            include content marked as draft
-  -E, --buildExpired           include expired content
-  -F, --buildFuture            include content with publishdate in the future
-      --cacheDir string        filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
-      --cleanDestinationDir    remove files from destination not found in static directories
-  -c, --contentDir string      filesystem path to content directory
-  -d, --destination string     filesystem path to write files to
-      --disableKinds strings   disable different kind of pages (home, RSS etc.)
-      --editor string          edit new content with this editor, if provided
-      --enableGitInfo          add Git revision, date, author, and CODEOWNERS info to the pages
-      --forceSyncStatic        copy all files when static is changed.
-      --gc                     enable to run some cleanup tasks (remove unused cache files) after the build
-  -h, --help                   help for new
-      --ignoreCache            ignores the cache directory
-  -k, --kind string            content type to create
-  -l, --layoutDir string       filesystem path to layout directory
-      --minify                 minify any supported output format (HTML, XML etc.)
-      --noChmod                don't sync permission mode of files
-      --noTimes                don't sync modification time of files
-      --panicOnWarning         panic on first WARNING log
-      --poll string            set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
-      --printI18nWarnings      print missing translations
-      --printMemoryUsage       print memory usage to screen at intervals
-      --printPathWarnings      print warnings on duplicate target paths etc.
-      --printUnusedTemplates   print warnings on unused templates.
-      --templateMetrics        display metrics about template executions
-      --templateMetricsHints   calculate some improvement hints when combined with --templateMetrics
-  -t, --theme strings          themes to use (located in /themes/THEMENAME/)
-      --trace file             write trace to file (not useful in general)
-```
-
-
-## Version Control
-
-Yes, GitHub 👍
+- [Everything Hugo]({{< ref "posts/hugo/hugo.md" >}})
+    - [Set up a Hugo website in 5 minutes?]({{< ref "posts/hugo/setups.md" >}})
+    - [Deploy your Hugo website using the latest AWS tools?]({{< ref "posts/hugo/deploy.md" >}})
+    - [Add a comment widget to your website to received feedbacks?]({{< ref "posts/hugo/comments.md" >}})
+    - [How does Google Analytics work and how to add one to your website?]({{< ref "posts/hugo/google_analytics.md" >}})
+    
 
 
