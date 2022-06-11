@@ -69,3 +69,12 @@ How can we verify if the above setup was successful or not?
    about 10 seconds to reflect the change.
    ![](https://user-images.githubusercontent.com/22876277/169633046-e1374f55-2e3a-4e48-8b20-00cdc5dd2fa0.png)
 4. Once you have verified that everything works locally, you should feel confident to deploy the code to production.
+
+
+## See Also
+
+- [Everything Hugo]({{< ref "posts/hugo/hugo.md" >}})
+    - [Set up a Hugo website in 5 minutes?]({{< ref "posts/hugo/setups.md" >}})
+    - [Deploy your Hugo website using the latest AWS tools?]({{< ref "posts/hugo/deploy.md" >}})
+    - [Add a comment widget to your website to received feedbacks?]({{< ref "posts/hugo/comments.md" >}})
+    - [How does Google Analytics work and how to add one to your website?]({{< ref "posts/hugo/google_analytics.md" >}})

@@ -29,9 +29,10 @@ comments: false
   
 ---
 - 修行
-  - 2018年在[Bhavana Society](https://bhavanasociety.org/) 开始练习内观
+  - 2018年在[Bhavana Society](https://bhavanasociety.org/)开始练习内观
   - 2019年开始系统学习佛学
-  - 2021年冬在[纽约法鼓山](https://dharmadrumretreat.org/) 接触禅宗，后修习止观与默照禅
+  - 2021年冬在[纽约法鼓山](https://dharmadrumretreat.org/)接触禅宗
+  - 2022年6月开始修习[默照禅]({{< ref "posts/meditation/silent_illumination.cn.md" >}})
 
 --- 
 

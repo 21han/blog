@@ -11,19 +11,33 @@ cover:
 
 > the world’s fastest framework for building websites. - Hugo
 
+## Why host my own blog?
+
+Not your hosting, not your blog. 
+
+Third-party blogging services can take down your post anytime at their will. 
+
+Do you want to put the power of your life
+at other people's hands?
+
 ## Why Hugo?
 
-Hugo is an SSG (Static Site Generator) implemented in Go, a powerful language which makes Hugo capable of generating 
-most pages less than 1 ms. It is open source and free. Hugo also has a great template community which makes developing
-and trouble-shooting Hugo site very easy.
+- It is the fastest framework that I have used. 
+  - run `hugo --templateMetrics` to test your build time
+  - my build time is 🚀 **0.107 seconds** running on a 2019 MacBook Pro
+- It is powered by Go, which I love.
+- Can't get more secure than SSG, cause there is no backend! Nothing to hack.
+- Hugo is free and open-sourced. 💰
+- Supports markdown format for content publications.
+- [Extremely easy to use]({{< ref "posts/hugo/setups.md" >}})
+- [Fast to deploy]({{< ref "posts/hugo/deploy.md" >}})
 
-## My posts about Hugo development
 
-- [How to set up a Hugo website in 5 minutes?]({{< ref "posts/hugo/setups.md" >}})
-- [How to deploy your Hugo website using AWS Amplify close to free?]({{< ref "posts/hugo/deploy.md" >}})
-- [How to add a comment widget to your Hugo website to improve visitor interaction?]({{< ref "posts/hugo/comments.md" >}})
-- [How to add Google Analytics to your Hugo website to improve your site?]({{< ref "posts/hugo/google_analytics.md" >}})
+## 0 to 1
 
-
+- [Set up a Hugo website in 5 minutes?]({{< ref "posts/hugo/setups.md" >}})
+- [Deploy your Hugo website using the latest AWS tools?]({{< ref "posts/hugo/deploy.md" >}})
+- [Add a comment widget to your website to received feedbacks?]({{< ref "posts/hugo/comments.md" >}})
+- [How does Google Analytics work and how to add one to your website?]({{< ref "posts/hugo/google_analytics.md" >}})
 
 
