@@ -25,10 +25,7 @@ In my GitHub Project [README](https://github.com/21han/blog/#readme), I have add
 the Amplify OneClick button so that I can quickly navigate to the console
 to track my deployment process. 
 
-```markdown
-## 🚀🚀🚀
-[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://us-east-1.console.aws.amazon.com/amplify/home?region=us-east-1#/d1i779b6k8afpv)
-```
+{{<gist 21han bad2d4ae96c3dd4927f46dabb6480fbe>}}
 
 
 ![](https://user-images.githubusercontent.com/22876277/173204318-383ddd40-9a3a-4d66-89de-f422465fbf0b.png)

@@ -22,39 +22,13 @@ have just edited, making it easy to check your edit. Naturally, I was curious ho
 at its source code, and found the `livereload.go`'s code chunk below.
 
 
-```go
-// source: https://github.com/gohugoio/hugo/blob/master/livereload/livereload.go#L132-L141
-
-func refreshPathForPort(s string, port int) {
-	// Tell livereload a file has changed - will force a hard refresh if not CSS or an image
-	urlPath := filepath.ToSlash(s)
-	portStr := ""
-	if port > 0 {
-		portStr = fmt.Sprintf(`, "overrideURL": %d`, port)
-	}
-	msg := fmt.Sprintf(`{"command":"reload","path":%q,"originalPath":"","liveCSS":true,"liveImg":true%s}`, urlPath, portStr)
-	wsHub.broadcast <- []byte(msg)
-}
-```
+{{<gist 21han 6ffd77c3e3a3370ce49eece9e34f8691 livereload_1.go>}}
 
 Basically, this is achieved using a local WebSocket connection from here. This is all based on the wonderful [Gorilla 
 Websocket Package](https://github.com/gorilla/websocket)
 
-```go
-// source: https://github.com/gohugoio/hugo/blob/master/livereload/connection.go
+{{<gist 21han 6ffd77c3e3a3370ce49eece9e34f8691 livereload_2.go>}}
 
-type connection struct {
-	// The websocket connection.
-	ws *websocket.Conn
-
-	// Buffered channel of outbound messages.
-	send chan []byte
-
-	// There is a potential data race, especially visible with large files.
-	// This is protected by synchronisation of the send channel's close.
-	closer sync.Once
-}
-```
 
 ### What makes Hugo so secure?
 
@@ -69,24 +43,9 @@ as its File System abstraction layer, and no third-party components can mount fi
 
 
 #### Security Policy
-```go
-source: https://github.com/gohugoio/hugo/blob/master/config/security/securityConfig.go
 
-// Config is the top level security config.
-type Config struct {
-	// Restricts access to os.Exec.
-	Exec Exec `json:"exec"`
+{{<gist 21han 6ffd77c3e3a3370ce49eece9e34f8691 securityConfig.go>}}
 
-	// Restricts access to certain template funcs.
-	Funcs Funcs `json:"funcs"`
-
-	// Restricts access to resources.Get, getJSON, getCSV.
-	HTTP HTTP `json:"http"`
-
-	// Allow inline shortcodes
-	EnableInlineShortcodes bool `json:"enableInlineShortcodes"`
-}
-```
 
 For example, in the code chunk above, Hugo's built-in security policy is to restrict access to `os.Exec`, certain
 template functions that aren't completed trusted.
@@ -101,41 +60,8 @@ version. More readings on this can be found [here](https://github.com/golang/go/
 
 ### Understanding content structure
 
-```
-❯ tree -d ./ 
-./
-├── content  # 🏠 this is where to place your markdown content
-│   └── posts
-│       ├── hugo  # I like to group my posts into folders to organize contents
-│       └── meditation
-├── layouts  # Hugo layouts either live here or inside the template
-│   └── partials  # I include any override/project-only layouts here to enhance what's not already in the template 
-├── public  # don't worry about this folder if you are using my deployment set-up
-├── resources  # where resources is stored
-│   └── _gen
-│       ├── assets
-├── static  # static files directory
-└── themes  # the theme you are using. e.g. here I am using the PaperMod theme. 
-    └── PaperMod
-        ├── assets
-        │   ├── css
-        │   │   ├── common
-        │   │   ├── core
-        │   │   ├── extended
-        │   │   └── hljs
-        │   └── js
-        ├── i18n
-        ├── images
-        └── layouts
-            ├── _default
-            │   └── _markup
-            ├── partials
-            │   └── templates
-            └── shortcodes
+{{<gist 21han 6ffd77c3e3a3370ce49eece9e34f8691 tree.txt>}}
 
-29 directories
-
-```
 
 ## See Also
 
